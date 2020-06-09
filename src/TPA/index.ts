@@ -15,5 +15,6 @@ export default async function getTpa() {
       });
     }
   );
+  flavors.shift();
   return flavors;
 }

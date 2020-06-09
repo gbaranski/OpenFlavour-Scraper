@@ -18,5 +18,6 @@ export default async function getCapella() {
         .replace(/(\r\n|\n|\r)/gm, ""),
     });
   });
+  flavors.shift();
   return flavors;
 }
