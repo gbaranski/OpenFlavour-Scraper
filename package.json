@@ -1,0 +1,30 @@
+{
+  "name": "flavor-scrapers",
+  "version": "1.0.0",
+  "description": "Scrapers for flavors",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "ts-node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/gbaranski/flavors-scrapers.git"
+  },
+  "author": "gbaranski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gbaranski/flavors-scrapers/issues"
+  },
+  "homepage": "https://github.com/gbaranski/flavors-scrapers#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cheerio": "^1.0.0-rc.3",
+    "eslint": "^7.2.0",
+    "request": "^2.88.2",
+    "typescript": "^3.9.5"
+  },
+  "devDependencies": {
+    "@types/cheerio": "^0.22.18",
+    "@types/request": "^2.48.5"
+  }
+}
