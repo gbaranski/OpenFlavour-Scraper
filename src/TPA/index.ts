@@ -13,7 +13,6 @@ export default function getTpa() {
       const flavors = [{}];
 
       $("tr").each(function () {
-        // @ts-ignore
         const flavor = $(this).children().first();
         flavors.push({
           name: flavor.text().replace(/(\r\n|\n|\r)/gm, ""),

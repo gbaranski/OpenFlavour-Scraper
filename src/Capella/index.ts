@@ -11,10 +11,18 @@ export default function getCapella() {
     (err, res, body) => {
       const $ = cheerioModule.load(body);
 
+      const flavors = [{}];
+
       $(".product-item-link").each(function () {
-        // @ts-ignore
-        console.log($(this).text());
+        const flavor = $(this);
+        flavors.push({
+          name: flavor
+            .text()
+            .trim()
+            .replace(/(\r\n|\n|\r)/gm, ""),
+        });
       });
+      console.log(flavors);
     }
   );
 }
