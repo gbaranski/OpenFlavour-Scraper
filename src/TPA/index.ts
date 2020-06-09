@@ -1,14 +1,10 @@
-const request = require("request");
+import fetch from "node-fetch";
 const cheerioModule = require("cheerio");
 
 export default function getTpa() {
-  request(
-    {
-      method: "GET",
-      url: "https://shop.perfumersapprentice.com/specsheetlist.aspx",
-    },
-    (err, res, body) => {
-      const $ = cheerioModule.load(body);
+  fetch("https://shop.perfumersapprentice.com/specsheetlist.aspx").then(
+    async (res) => {
+      const $ = cheerioModule.load(await res.text());
 
       const flavors = [{}];
 

@@ -2,7 +2,7 @@ import fetch from "node-fetch";
 
 const cheerioModule = require("cheerio");
 
-export async function getMaxPages() {
+export async function getMaxInaweraPages() {
   const res = await fetch(
     "http://www.inaweraflavours.com/en/7-e-flavours?n=50&id_category=7&p=1"
   );
