@@ -11,16 +11,10 @@ export async function getMaxInaweraPages() {
 }
 
 export default async function getInawera(maxPages: number) {
-  let currentPage = 1;
-  const flavors = [{}];
-
-  while (currentPage <= maxPages) {
-    console.log(`Scraping page ${currentPage}`);
-    let url = `http://www.inaweraflavours.com/en/7-e-flavours?n=50&id_category=7&p=${currentPage}`;
-
-    currentPage += 1;
-
-    fetch(url).then(async (res) => {
+  const promises = Array.from({ length: maxPages }, (v, x) => x + 1).map(
+    async (currentPage) => {
+      let url = `http://www.inaweraflavours.com/en/7-e-flavours?n=50&id_category=7&p=${currentPage}`;
+      const res = await fetch(url);
       const $ = cheerioModule.load(await res.text());
       const flavorsOnPage = [{}];
       $("h3").each(function () {
@@ -34,8 +28,10 @@ export default async function getInawera(maxPages: number) {
       });
       flavorsOnPage.shift(); // removed empty arr
       flavorsOnPage.shift(); // removes "subcategories " element
-      console.log(flavorsOnPage);
-      flavors.push(flavorsOnPage);
-    });
-  }
+      return flavorsOnPage;
+    }
+  );
+
+  const allFlavours = await Promise.all(promises);
+  return [].concat.apply([], allFlavours);
 }

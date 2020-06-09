@@ -2,7 +2,7 @@ import getCapella from "./Capella/index";
 import getTpa from "./TPA/index";
 import getInawera, { getMaxInaweraPages } from "./Inawera";
 
-async function main() {
+(async () => {
   const results = {
     InaweraResults: [],
     CapellaResults: [],
@@ -10,9 +10,8 @@ async function main() {
   };
   console.log("Begin scraping!");
   const maxInaweraPages = await getMaxInaweraPages();
-  //   getInawera(maxInaweraPages);
-  //   getCapella();
+  results.InaweraResults.push(await getInawera(maxInaweraPages));
+  results.CapellaResults.push(await getCapella());
   results.TpaResults.push(await getTpa());
   console.log(results);
-}
-main();
+})();
