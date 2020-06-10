@@ -1,4 +1,5 @@
 import fetch from "node-fetch";
+import { FlavourInterface } from "../types";
 const cheerioModule = require("cheerio");
 
 export default async function getCapella() {
@@ -7,7 +8,7 @@ export default async function getCapella() {
   );
   const $ = cheerioModule.load(await res.text());
 
-  const flavors = [{}];
+  const flavors: FlavourInterface[] = [];
 
   $(".product-item-link").each(function () {
     const flavor = $(this);
@@ -16,6 +17,7 @@ export default async function getCapella() {
         .text()
         .trim()
         .replace(/(\r\n|\n|\r)/gm, ""),
+      manufacturer: "Capella",
     });
   });
   flavors.shift();

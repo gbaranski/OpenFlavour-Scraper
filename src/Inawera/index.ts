@@ -1,4 +1,5 @@
 import fetch from "node-fetch";
+import { FlavourInterface } from "../types";
 
 const cheerioModule = require("cheerio");
 
@@ -16,7 +17,7 @@ export default async function getInawera(maxPages: number) {
       let url = `http://www.inaweraflavours.com/en/7-e-flavours?n=50&id_category=7&p=${currentPage}`;
       const res = await fetch(url);
       const $ = cheerioModule.load(await res.text());
-      const flavorsOnPage = [{}];
+      const flavorsOnPage: FlavourInterface[] = [];
       $("h3").each(function () {
         const flavor = $(this);
         flavorsOnPage.push({
@@ -24,6 +25,7 @@ export default async function getInawera(maxPages: number) {
             .text()
             .trim()
             .replace(/(\r\n|\n|\r)/gm, ""),
+          manufacturer: "Inawera",
         });
       });
       flavorsOnPage.shift(); // removed empty arr
