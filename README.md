@@ -1,6 +1,5 @@
 # OpenFlavour Scrapers
-Scrapers for flavors vendors\n
-Current supported vendors: 
+Currently supported flavours vendors:
 - TPA
 - Capella
 - Inawera
