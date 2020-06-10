@@ -1,5 +1,5 @@
 # OpenFlavour Scrapers
-Scrapers for flavors vendors
+Scrapers for flavors vendors\n
 Current supported vendors: 
 - TPA
 - Capella
