@@ -10,10 +10,11 @@ git clone https://github.com/gbaranski/OpenFlavour-Scraper.git
 cd OpenFlavour-Scraper
 npm install
 ```
-Now You need to start MongoDB service and run API Server, more info on OpenFlavor-API Readme
+Start MongoDB service and run API Server, more info on OpenFlavor-API Readme
 
-When You're done with previous step, run
+When it's done with previous step, run
 ```
 npm start
 ```
-Then You should see 'Begin scraping', wait a while and it will print on console big JSON output, now it says that scraped data properly, now it will send it to API Server, after thats done, program will exit and print 'Done', now You can see new data appeared on database.
+Then it should print 'Begin scraping', wait a while and it will print on console big JSON output, now it says that scraped data properly, now it will send it to API Server, after thats done, program will exit and print 'Done'.
+Check the database for scraped data.
