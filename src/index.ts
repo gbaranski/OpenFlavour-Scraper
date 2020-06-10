@@ -20,11 +20,12 @@ import fetch from "node-fetch";
     });
   });
   console.log(JSON.stringify(totalResults));
-  fetch(`${process.env.SERVER_URL}/api/addFlavour`, {
+  await fetch(`${process.env.SERVER_URL}/api/addFlavour`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(totalResults),
   });
+  console.log("Done!!");
 })();
