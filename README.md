@@ -3,6 +3,7 @@ Currently supported flavours vendors:
 - TPA
 - Capella
 - Inawera
+- FlavourArt
 
 # API Server
 You can find API Server here https://github.com/gbaranski/OpenFlavour-API
