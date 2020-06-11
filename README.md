@@ -1,5 +1,8 @@
 # OpenFlavour Scrapers
-Scrapers for flavors vendors
+Currently supported flavours vendors:
+- TPA
+- Capella
+- Inawera
 
 # API Server
 You can find API Server here https://github.com/gbaranski/OpenFlavour-API
