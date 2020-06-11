@@ -1,33 +1,17 @@
 {
-  "name": "flavor-scrapers",
+  "name": "get-flavors",
   "version": "1.0.0",
-  "description": "Scrapers for flavors",
-  "main": "src/index.ts",
+  "description": "",
+  "main": "app.js",
   "scripts": {
-    "start": "ts-node -r dotenv/config ."
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/gbaranski/flavors-scrapers.git"
-  },
-  "author": "gbaranski",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/gbaranski/flavors-scrapers/issues"
-  },
-  "homepage": "https://github.com/gbaranski/flavors-scrapers#readme",
   "dependencies": {
-    "axios": "^0.19.2",
-    "cheerio": "^1.0.0-rc.3",
-    "dotenv": "^8.2.0",
-    "eslint": "^7.2.0",
-    "node-fetch": "^2.6.0",
-    "request": "^2.88.2",
-    "typescript": "^3.9.5"
-  },
-  "devDependencies": {
-    "@types/cheerio": "^0.22.18",
-    "@types/node-fetch": "^2.5.7",
-    "@types/request": "^2.48.5"
+    "phantomjs": "^2.1.7",
+    "x-ray": "^2.3.4",
+    "x-ray-phantom": "^1.0.1"
   }
 }
