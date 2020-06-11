@@ -3,6 +3,7 @@ import getTpa from './TPA/index'
 import getInawera, { getMaxInaweraPages } from './Inawera'
 import getFlavourArt from './FlavourArt'
 import getFlavorWest from './FlavorWest'
+import getFlavorah from './Flavorah'
 import { FlavourInterface } from './types'
 import fetch from 'node-fetch'
 ;(async () => {
@@ -16,6 +17,7 @@ import fetch from 'node-fetch'
   vendors.push(await getCapella())
   vendors.push(await getFlavourArt())
   vendors.push(await getFlavorWest())
+  vendors.push(await getFlavorah())
 
   const totalResults: FlavourInterface[] = []
   vendors.forEach((_vendor) => {
