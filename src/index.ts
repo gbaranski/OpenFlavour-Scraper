@@ -1,6 +1,7 @@
 import getCapella from "./Capella/index";
 import getTpa from "./TPA/index";
 import getInawera, { getMaxInaweraPages } from "./Inawera";
+import getFlavourArt from "./FlavourArt";
 import { FlavourInterface } from "./types";
 import fetch from "node-fetch";
 
@@ -9,9 +10,11 @@ import fetch from "node-fetch";
   console.log("Begin scraping!");
   const vendors = [];
   const maxInaweraPages = await getMaxInaweraPages();
+
   vendors.push(await getInawera(maxInaweraPages));
   vendors.push(await getTpa());
   vendors.push(await getCapella());
+  vendors.push(await getFlavourArt());
 
   const totalResults: FlavourInterface[] = [];
   vendors.forEach((_vendor) => {
