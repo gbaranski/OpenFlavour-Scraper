@@ -21,5 +21,6 @@ export default async function getCapella() {
     });
   });
   flavors.shift();
+  console.log('Done Capella');
   return flavors;
 }

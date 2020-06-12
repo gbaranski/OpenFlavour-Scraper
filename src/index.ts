@@ -33,5 +33,5 @@ import fetch from 'node-fetch';
     },
     body: JSON.stringify(totalResults),
   });
-  console.log('Done!!');
+  console.log('Done!');
 })();

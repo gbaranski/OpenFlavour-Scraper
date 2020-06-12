@@ -35,5 +35,6 @@ export default async function getInawera(maxPages: number) {
   );
 
   const allFlavours = await Promise.all(promises);
+  console.log('Done Inawera');
   return [].concat.apply([], allFlavours);
 }

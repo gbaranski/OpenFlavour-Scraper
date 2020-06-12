@@ -16,9 +16,10 @@ export default async function getFlavorah() {
         .trim()
         .replace(/(\r\n|\n|\r)/gm, '')
         .split(' Flavoring | ')[0],
-      manufacturer: 'FLV',
+      manufacturer: 'flavorah',
     });
   });
   flavors.shift();
+  console.log('Done Flavorah');
   return flavors;
 }

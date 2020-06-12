@@ -18,5 +18,6 @@ export default async function getTpa() {
     },
   );
   flavors.shift();
+  console.log('Done TPA');
   return flavors;
 }

@@ -17,9 +17,10 @@ export default async function getFlavorWest() {
         .text()
         .trim()
         .replace(/(\r\n|\n|\r)/gm, ''),
-      manufacturer: 'FW',
+      manufacturer: 'flavorwest',
     });
   });
   flavors.shift();
+  console.log('Done FlavorWest');
   return flavors;
 }
