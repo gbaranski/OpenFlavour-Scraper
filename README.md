@@ -4,6 +4,10 @@ Currently supported flavours vendors:
 - Capella
 - Inawera
 - FlavourArt
+- FlavorWest
+- Flavorah
+
+Thanks to @brendan-c for adding scrapers.
 
 # API Server
 You can find API Server here https://github.com/gbaranski/OpenFlavour-API
