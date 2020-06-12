@@ -25,11 +25,11 @@ import fetch from 'node-fetch';
       totalResults.push(_flavor);
     });
   });
-  console.log(JSON.stringify(totalResults));
   await fetch(`${process.env.SERVER_URL}/api/addFlavour`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
+      token: process.env.TOKEN,
     },
     body: JSON.stringify(totalResults),
   });
