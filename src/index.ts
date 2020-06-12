@@ -10,28 +10,32 @@ import fetch from 'node-fetch';
   console.log(process.env.SERVER_URL);
   console.log('Begin scraping!');
   const vendors = [];
-  const maxInaweraPages = await getMaxInaweraPages();
+  const maxInaweraPages = getMaxInaweraPages();
 
-  vendors.push(await getInawera(maxInaweraPages));
-  vendors.push(await getTpa());
-  vendors.push(await getCapella());
-  vendors.push(await getFlavourArt());
-  vendors.push(await getFlavorWest());
-  vendors.push(await getFlavorah());
+  vendors.push(getInawera(await maxInaweraPages));
+  vendors.push(getTpa());
+  vendors.push(getCapella());
+  vendors.push(getFlavourArt());
+  vendors.push(getFlavorWest());
+  vendors.push(getFlavorah());
 
   const totalResults: FlavourInterface[] = [];
-  vendors.forEach((_vendor) => {
-    _vendor.forEach(async (_flavor: FlavourInterface) => {
+  await Promise.all(vendors);
+
+  vendors.forEach(async (_vendor: Promise<[]>) => {
+    (await _vendor).forEach(async (_flavor: FlavourInterface) => {
       totalResults.push(_flavor);
     });
   });
+
   await fetch(`${process.env.SERVER_URL}/api/addFlavour`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
       token: process.env.TOKEN,
     },
-    body: JSON.stringify(totalResults),
+    // ignore that next line, typescript is wrong
+    body: JSON.stringify(await totalResults),
   });
   console.log('Done!');
 })();
