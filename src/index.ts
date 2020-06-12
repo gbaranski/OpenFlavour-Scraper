@@ -24,7 +24,9 @@ import fetch from 'node-fetch';
 
   vendors.forEach(async (_vendor: Promise<[]>) => {
     (await _vendor).forEach(async (_flavor: FlavourInterface) => {
-      totalResults.push(_flavor);
+      if (_flavor.name) {
+        totalResults.push(_flavor);
+      }
     });
   });
 
