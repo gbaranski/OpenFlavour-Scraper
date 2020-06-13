@@ -17,7 +17,7 @@ export default async function getCapella() {
         .text()
         .trim()
         .replace(/(\r\n|\n|\r)/gm, ''),
-      manufacturer: 'Capella',
+      manufacturer: 'capella',
     });
   });
   flavors.shift();

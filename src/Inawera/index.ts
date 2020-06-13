@@ -25,7 +25,7 @@ export default async function getInawera(maxPages: number) {
             .text()
             .trim()
             .replace(/(\r\n|\n|\r)/gm, ''),
-          manufacturer: 'Inawera',
+          manufacturer: 'inawera',
         });
       });
       flavorsOnPage.shift(); // removed empty arr

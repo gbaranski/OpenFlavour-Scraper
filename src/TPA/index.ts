@@ -12,7 +12,7 @@ export default async function getTpa() {
         const flavor = $(this).children().first();
         flavors.push({
           name: flavor.text().replace(/(\r\n|\n|\r)/gm, ''),
-          manufacturer: 'TPA',
+          manufacturer: 'tpa',
         });
       });
     },

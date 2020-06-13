@@ -10,7 +10,7 @@ export default async function getFlavourArt() {
     const flavor = $(this);
     flavors.push({
       name: flavor.text(),
-      manufacturer: 'FlavourArt',
+      manufacturer: 'flavourart',
     });
   });
   console.log('Done FlavourArt');
