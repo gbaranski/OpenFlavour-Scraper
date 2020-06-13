@@ -16,7 +16,9 @@ export default async function getCapella() {
       name: flavor
         .text()
         .trim()
-        .replace(/(\r\n|\n|\r)/gm, ''),
+        .replace(/(\r\n|\n|\r)/gm, '')
+        .replace('13ml', '')
+        .trim(),
       manufacturer: 'capella',
     });
   });
